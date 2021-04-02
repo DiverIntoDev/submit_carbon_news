@@ -1,0 +1,31 @@
+{
+  "name": "testbackend",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js --ignore 'test-app/'",
+    "test-app": "npm run serve --prefix test-app",
+    "dev": "concurrently \"npm run server\" \"npm run test-app\"",
+    "start": "node server/server.js",
+    "web": "node server/server.js",
+    "build": "npm install --prefix test-app && npm run build --prefix test-app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "@vue/cli": "^4.5.12",
+    "mongodb": "^3.6.5",
+    "mongoose": "^5.12.3",
+    "vue": "^3.0.9"
+  },
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7"
+  },
+  "description": ""
+}
