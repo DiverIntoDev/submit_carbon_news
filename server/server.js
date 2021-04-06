@@ -17,6 +17,7 @@ const path = require('path')
 const port = apiAcess || 4000;
 
 const posts = require('../server/routes/api/posts')
+const pointsTable = require('../server/routes/api/emailCounter')
 
 mongoose.connect(
     'mongodb+srv://user:81994726@cluster0.pbedc.gcp.mongodb.net/test-backend?retryWrites=true&w=majority', {
@@ -30,6 +31,7 @@ mongoose.connect(
 .catch((err) => console.log(err))
 
 app.use('/api/posts', posts)
+app.use('/api/points', pointsTable)
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static('test-app/dist'))
